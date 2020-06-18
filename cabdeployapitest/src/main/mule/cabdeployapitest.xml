@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="09617bf3-fd82-438f-9079-dae045b58946" >
+		<http:listener-connection host="0.0.0.0" port="9091" />
+	</http:listener-config>
+	<flow name="cabdeployapitestFlow" doc:id="df10bb3f-bc25-419d-91c3-fbe077051674" >
+		<http:listener doc:name="GET /hello" doc:id="23393721-34ac-43d0-a399-05aeceec6007" config-ref="HTTP_Listener_config" path="/hello"/>
+		<logger level="INFO" doc:name="Logger" doc:id="7d060ebc-3624-4f61-8e21-6be9a95f5395" message="Connection Successful "/>
+	</flow>
+</mule>
